@@ -39,7 +39,7 @@ def bruteforce(passw):
         'Accept-Language': 'zh-CN,zh;q=0.9',
         'Connection': 'close'
     }
-    r = requests.post(headers=headers_1,data=json.dumps(data_1),url=url+subfix,proxies=proxy,allow_redirects=False)
+    r = requests.post(headers=headers_1,data=json.dumps(data_1),url=url+subfix,proxies=proxy,allow_redirects=True,timeout=10,verify=False)
     r_1 = requests.post(headers=header_2,url=url+subfix_1,proxies=proxy,allow_redirects=False)
     return r.text, r_1.status_code
 
